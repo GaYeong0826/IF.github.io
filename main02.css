@@ -1,0 +1,590 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(243, 239, 235);
+}
+#wide-message {
+  display: none; 
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  background-color: rgba(0, 0, 0, 0.8); 
+  color: white; 
+  font-size: 24px; 
+  padding: 20px; 
+  border-radius: 10px; 
+  z-index: 9999;
+  text-align: center; 
+}
+#narrow-message {
+  display: none; 
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  background-color: rgba(0, 0, 0, 0.8); 
+  color: white; 
+  font-size: 24px; 
+  padding: 20px; 
+  border-radius: 10px; 
+  z-index: 9999;
+  text-align: center; 
+}
+body{
+  width: 1920px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-style: normal;
+}
+#box1 {
+  position: fixed;
+  background-color: rgb(209, 159, 255);
+  top: 10px;
+  right: 10px;
+  width: 80px;
+  height: 50px;
+  z-index: 999;
+  opacity: 1;
+}
+
+video {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  margin-left: -50%;
+  width: 100%;
+  z-index: 0; 
+  border: none;
+}
+#circle-container{
+  width: 1920px;
+  height: 5000px;
+}
+.circle {
+  background: none;
+  background-size: cover;
+  z-index: 10; 
+}
+#circle1 {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  left: 35%;
+  top: 1100px;
+  background-image: url('/images/pill-circles/01.png');
+
+}
+
+#circle2 {
+  position: absolute;
+  width: 196px;
+  height: 196px;
+  left: 25%;
+  top: 1321px;
+  background-image: url('/images/pill-circles/04.png');
+}
+
+#circle3 {
+  position: absolute;
+  width: 836px;
+  height: 836px;
+  left: -20%;
+  top: 1551px;
+  background-image: url('/images/pill-circles/03.png');
+
+}
+
+#circle4 {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  left: 17%;
+  top: 1880px;
+  background-image: url('/images/pill-circles/02.png');
+
+}
+
+#circle5 {
+  position: absolute;
+  width: 172px;
+  height: 172px;
+  left: 40%;
+  top: 1620px;
+  background-image: url('/images/pill-circles/03.png'); 
+
+}
+
+#circle6 {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  left: 70%;
+  top: 1368px;
+  background-image: url('/images/pill-circles/04.png');
+
+}
+
+#circle7 {
+  position: absolute;
+  width: 282px;
+  height: 282px;
+  left: 35%;
+  top: 2142px;
+  background-image: url('/images/pill-circles/01.png');
+
+}
+
+#circle8 {
+  position: absolute;
+  width: 582px;
+  height: 582px;
+  left: 80%;
+  top: 1997px;
+  background-image: url('/images/pill-circles/03-1.png');
+
+}
+
+#circle9 {
+  position: absolute;
+  width: 868px;
+  height: 868px;
+  left: 60%;
+  top: 2220px;
+  background-image: url('/images/pill-circles/04.png'); 
+
+}
+
+#circle10 {
+  position: absolute;
+  width: 1734px;
+  height: 1734px;
+  left: -40%;
+  top: 2640px;
+  background-image: url('/images/pill-circles/02.png'); 
+  transition: left 1s ease-in-out; 
+  z-index: 12;
+}
+#text01 {
+  position: absolute;
+  left: 50%;
+  top: 1880px;
+  width: 500px;
+  margin-left: -250px;
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Pretendard';
+  opacity: 0;
+}
+#checklist {
+  width: 900px;
+  height: 400px;
+  position: absolute;
+  top: 3310px;
+  left: 50%;
+  z-index: 11;
+  background: none;
+  font-family: 'Pretendard';
+
+}
+#checklist p:nth-child(2) {
+ font-weight: bold;
+ font-size: 60px;
+ margin-left: 50px;
+ margin-bottom: 50px;
+ background: none;
+}
+#checklist p:nth-child(1) {
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+  background: none;
+  color: rgb(141, 134, 127);
+}
+#checklist ul {
+  font-weight: bold;
+  font-size: 25px;
+  background: none;
+
+ }
+ #checklist li {
+  list-style: none;
+  margin-bottom: 15px;
+  background: none;
+
+ }
+ .check-item {
+  margin: 15px;
+ }
+ 
+ /* 화면 어두워지는 효과 */
+ .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0; 
+  visibility: hidden; 
+  z-index: 11;
+  transition: opacity 0.5s ease; 
+}
+
+#result {
+  position: absolute;
+  width: 1000px;
+  height: 300px;
+  margin-left: -500px;
+  top: 3500px;
+  left: 40%;
+  z-index: 11;
+  background: none;
+  visibility: hidden;
+  opacity: 0;
+}
+#result p {
+  background: none;
+  font-family: 'Pretendard';
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  padding: 10px;
+}
+#result p:nth-child(2) {
+  background: none;
+  font-family: 'Pretendard';
+  font-weight: bold;
+  text-align: center;
+  font-size: 60px;
+  color: white;
+  padding: 10px;
+}
+#last-text01 {
+  position: absolute;
+  font-family: 'Pretendard';
+  width: 1000px;
+  height: 200px;
+  margin-left: -500px;
+  top: 4500px;
+  left: 50%;
+  z-index: 11;
+  color: rgb(0, 0, 0); 
+  background: none;
+}
+#last-text01 p {
+  font-size: 40px;
+  background: none;
+  text-align: center;
+  font-weight: bold;
+}
+#last-text02 {
+  position: absolute;
+  font-family: 'Pretendard';
+  width: 1000px;
+  height: 200px;
+  margin-left: -500px;
+  top: 5500px;
+  left: 50%;
+  z-index: 11;
+  color: rgb(0, 0, 0);
+  background: none;
+}
+#last-text02 p {
+  font-size: 30px;
+  background: none;
+  text-align: center;
+}
+#last-text02 p:nth-child(2) {
+  font-size: 70px;
+  font-weight: bold;
+  margin: 20px;
+  background: none;
+  text-align: center;
+}
+#last-text03 {
+  position: absolute;
+  font-family: 'Pretendard';
+  width: 1000px;
+  height: 500px;
+  margin-left: -500px;
+  top: 6500px;
+  left: 50%;
+  z-index: 11;
+  color: rgb(0, 0, 0);
+  background: none; 
+}
+#last-text03 p {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 30px;
+  background: none;
+  text-align: center;
+}
+#last-pill {
+  background: url('/images/pills/pill01.png');
+  background-size: cover;
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  margin-left: -100px;
+  top: 6350px;
+  left: 50%;
+  rotate: 45deg;
+  z-index: 999;
+}
+#BG1 {
+  background: url('/images/BG1.png');
+  background-size: cover;
+  position: absolute;
+  height: 3000px;
+  width: 100%;
+  margin-left: -50%;
+  top: 4700px;
+  left: 50%;
+  z-index: 5;
+
+  /* 마스크를 사용하여 위쪽은 투명하고 아래쪽은 불투명하게 처리 */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+#pills {
+  position: absolute;
+  width: 1800px;
+  height: 1000px;
+  margin-left: -900px;
+  left: 50%;
+  top: 6600px;
+}
+#pills-container {
+  display: flex;
+  align-items: flex-end;
+  align-content: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 1800px;
+  height: 700px;
+  top: 50px;
+  margin-left: -900px;
+  padding: 50px;
+  left: 50%;
+  z-index: 999;
+  background: none;
+  gap: 20px;
+}
+#pill02{
+  width: 200px;
+  height: 200px;
+  background: url('/images/pills/pill02.png') no-repeat;
+  background-size: contain;
+}
+#pill03{
+  width: 200px;
+  height: 200px;
+  background: url('/images/pills/pill03.png') no-repeat;
+  background-size: contain;
+
+}
+#pill04{
+  width: 200px;
+  height: 200px;
+  background: url('/images/pills/pill04.png') no-repeat;
+  background-size: contain;
+}
+#pill05{
+  width: 200px;
+  height: 200px;
+  background: url('/images/pills/pill05.png') no-repeat;
+  background-size: contain;
+
+}
+#pill06{
+  width: 200px;
+  height: 200px;
+  background: url('/images/pills/pill06.png') no-repeat;
+  background-size: contain;
+}
+#pill07{
+  width: 200px;
+  height: 200px;
+  background: url('/images/pills/pill07.png') no-repeat;
+  background-size: contain;
+}
+#pill08{
+  width: 200px;
+  height: 200px;
+  background: url('/images/pills/pill08.png') no-repeat;
+  background-size: contain;
+}
+#pill09{
+  width: 200px;
+  height: 200px;
+  background: url('/images/pills/pill09.png') no-repeat;
+  background-size: contain;
+}
+#pill10{
+  width: 200px;
+  height: 200px;
+  background: url('/images/pills/pill10.png') no-repeat;
+  background-size: contain;
+}
+#pill11{
+  width: 200px;
+  height: 200px;
+  background: url('/images/pills/pill11.png') no-repeat;
+  background-size: contain;
+}
+#pill12{
+  width: 200px;
+  height: 200px;
+  background: url('/images/pills/pill12.png') no-repeat;
+  background-size: contain;
+}
+#pill13{
+  width: 200px;
+  height: 200px;
+  background: url('/images/pills/pill13.png') no-repeat;
+  background-size: contain;
+}
+#pill14{
+  width: 200px;
+  height: 200px;
+  background: url('/images/pills/pill14.png') no-repeat;
+  background-size: contain;
+}
+#pill02-hover {
+    background: url('/images/pill-hovers/hover02.png') no-repeat;
+    background-size: contain;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    top: 20px;
+    left: 20px;
+}
+#pill03-hover {
+  background: url('/images/pill-hovers/hover03.png') no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  top: 20px;
+  left: 210px;
+}
+#pill04-hover {
+  background: url('/images/pill-hovers/hover04.png') no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  top: 20px;
+  left: 440px;
+}
+#pill05-hover {
+  background: url('/images/pill-hovers/hover05.png') no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  top: 20px;
+  left: 630px;
+}
+#pill06-hover {
+  background: url('/images/pill-hovers/hover06.png') no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  top: 20px;
+  left: 880px;
+}
+#pill07-hover {
+  background: url('/images/pill-hovers/hover07.png') no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  top: 20px;
+  left: 1100px;
+}
+#pill08-hover {
+  background: url('/images/pill-hovers/hover08.png') no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  top: 20px;
+  left: 1300px;
+}
+#pill09-hover {
+  background: url('/images/pill-hovers/hover09.png') no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  top: 250px;
+  left: 80px;
+}
+#pill10-hover {
+  background: url('/images/pill-hovers/hover10.png') no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  top: 250px;
+  left: 300px;
+}
+#pill11-hover {
+  background: url('/images/pill-hovers/hover11.png') no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  top: 250px;
+  left: 540px;
+}
+#pill12-hover {
+  background: url('/images/pill-hovers/hover12.png') no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  top: 250px;
+  left: 750px;
+}
+#pill13-hover {
+  background: url('/images/pill-hovers/hover13.png') no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  top: 250px;
+  left: 980px;
+}
+#pill14-hover {
+  background: url('/images/pill-hovers/hover14.png') no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  top: 250px;
+  left: 1200px;
+}
+.pill {
+  transition: opacity 0.3s ease; 
+}
+.pill-hover {
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none; /* 이벤트 간섭 차단 */
+}
